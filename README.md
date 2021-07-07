@@ -2,7 +2,7 @@
 
 Created using Visual Studio 2019
 
-This is a single player heads-up blackjack simulation game that supports betting, doubling down, splitting, doubling down after splitting, and surrendering. 
+This is a single player heads-up blackjack simulation game that supports betting, doubling down, and surrendering (Splitting and doubling down after splitting is on the to do list). 
 
 Rules: (Set up to mirror real blackjack table games commonly found in American casinos)
  - The Dealer must hit on soft 17. 
@@ -26,7 +26,7 @@ This program uses the following classes:
  - blackjack game class (blackjack.h).
 
 ToDo: 
- - Finish the Split function and add required functionality for payouts in handOver function
+ - Implement a Split function and add required functionality for payouts in handOver function
  - Add a card counting feature that keeps track of the running count of the shoe. 
  - Add a feature that will give win probability based on player decisons. For instance, after the initial cards are delt, if the player has enabled this 
 feature, there will be a percentage displayed of how likely it is that the player will win if he/she hits, stands, doubles, splits, etc. 
