@@ -245,12 +245,12 @@ void blackjack::select() {
 	cout << "You have " << player.getCurrentHandTotal() << ". " << endl << endl;
 	Sleep(500);
 	cout << "What would you like to do? " << endl << endl; 
-	cout << "Enter 1 to hit. \nEnter 2 to stand. \nEnter 3 to double down. \nEnter 4 to split. \nEnter 5 to surrender. " << endl; 
+	cout << "Enter 1 to hit. \nEnter 2 to stand. \nEnter 3 to double down. \nEnter 4 to surrender. " << endl; 
 	cout << "Input : "; 
 	int choice; 
 	cin >> choice; 
 	while (choice < 1 || choice > 5) {
-		cout << "Please enter a valid number from 1 to 5: "; 
+		cout << "Please enter a valid number from 1 to 4: "; 
 		cin >> choice; 
 	}
 	//decision handling 
@@ -258,8 +258,8 @@ void blackjack::select() {
 	case 1: { hit(player, false); break;  }
 	case 2: { stand(); break;  }
 	case 3: { doubleDown(); break;  }
-	case 4: { split(); break;  }
-	case 5: { surrender(); }
+	//case 4: { split(); break;  }
+	case 4: { surrender(); }
 	}
 }
 
@@ -322,7 +322,7 @@ void blackjack::hit(blackjackPlayer& who, bool dd) {
 }
 
 //player done making decisions, now dealers turn 
-void blackjack::dealersTurn(bool split) { 
+void blackjack::dealersTurn() { //Add 'bool hasSplit' parameter for split functionality? Not sure how I want to do that yet
 	card c = dealer.getCardAtIndex(0);
 	card d = dealer.getCardAtIndex(1);
 	cout << endl << endl;
@@ -407,6 +407,8 @@ void blackjack::doubleDown() {
 	hit(player, true);  
 }
 
+
+/*
 //player can split if both delt cards have same name (suit doesn't matter) 
 void blackjack::split() {
 	if (player.getSizeOfHand() > 2 || player.getCardAtIndex(0).name != player.getCardAtIndex(1).name) {
@@ -602,15 +604,10 @@ void blackjack::split() {
 
 	}
 		
-
-
-
-	
-
-
-	
-
 }
+//Split function is work in progress as I'd like to do this in a more efficient way
+//this is getting way to long already - back to the drawing board
+*/
 
 //surrender - player loses but keeps half their bet
 void blackjack::surrender() { 
@@ -708,6 +705,7 @@ void blackjack::handOver(string winner) {
 		else { mainMenu(); }
 	}
 
+	//prompt user to continue playing or return to main menu
 	cout << "Would you like to play another hand? " << endl << endl;
 	cout << "Enter 1 for yes, or 2 to go back to the main menu. \nInput : "; 
 	int choice; 
