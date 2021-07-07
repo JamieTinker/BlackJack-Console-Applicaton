@@ -26,6 +26,7 @@ This program uses the following classes:
  - blackjack game class (blackjack.h).
 
 ToDo: 
+ - Finish the Split function and add required functionality for payouts in handOver function
  - Add a card counting feature that keeps track of the running count of the shoe. 
  - Add a feature that will give win probability based on player decisons. For instance, after the initial cards are delt, if the player has enabled this 
 feature, there will be a percentage displayed of how likely it is that the player will win if he/she hits, stands, doubles, splits, etc. 
